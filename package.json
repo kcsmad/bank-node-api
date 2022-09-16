@@ -1,0 +1,29 @@
+{
+  "name": "bank-node-api",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "git@github.com:kcsmad/bank-node-api.git",
+  "author": "Kevin Maduro <nivekzin@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --pretty --transpile-only src/app.ts"
+  },
+  "dependencies": {
+    "@graphql-tools/schema": "^9.0.4",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "14"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.12",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.14",
+    "@types/node": "^18.7.18",
+    "dotenv": "^16.0.2",
+    "nodemon": "^2.0.20",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.3"
+  }
+}
