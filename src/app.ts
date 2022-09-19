@@ -1,25 +1,17 @@
 import * as dotenv from "dotenv";
-import express from "express";
-import cors from "cors";
+import { ApolloServer, gql } from "apollo-server";
+import { context } from "./context";
 
 dotenv.config();
 
-if (!process.env.PORT) {
-    process.exit(1);
-}
+const PORT = process.env.PORT || 8888
 
-const PORT: number = parseInt(process.env.PORT as string, 10);
+const typeDefs = gql``;
 
-const app = express();
+const resolvers = {};
 
-app.use(cors())
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+const server = new ApolloServer({ typeDefs, resolvers, context: context });
 
-app.get('/', (req, resp) => {
-    resp.send('Hello, GraphQL!')
+server.listen().then(({ port: PORT }) => {
+    console.log(`GraphQL server running at ${PORT}`)
 })
-
-app.listen(PORT, () => {
-    console.log(`Listening on port ${PORT}`)
-});
